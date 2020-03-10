@@ -1,8 +1,27 @@
 Rails.application.routes.draw do
-  resources :reviews
-  resources :wines
-  resources :orders
-  resources :friendships
-  resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :api do
+    resources :v1 do
+
+      #../users/:id
+      #../users/:id/orders
+      #../users/:id/orders/:id
+      #(maybe?)
+      #../users/:id/friendships
+      #../users/:id/friendships/:id
+      resources :users do
+        resources :orders
+        resources :friendships #--> might not be a neccesary route
+      end
+       
+      #.../wines
+      #.../wines/:id
+      # .../wines/:id/reviews
+      #.../wines/:id/reviews/:id
+      resources :wines do 
+        resources :reviews
+      end  
+      
+    end
+  end  
 end
