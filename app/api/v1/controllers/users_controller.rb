@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  #validations commmented out for testing uncomment when front end is more developed
+  #validates :name, :email, :age, presence: true
+  #validates :email, uniqueness: true
+  #validates :password, length: { in: 6..20 }
+
+
   #auth check
   def check
     user = User.find_by(name:params[:name])
@@ -17,7 +23,7 @@ class UsersController < ApplicationController
       my_token = issue_token(user)
       render json: { id: user.id, name: user.name, zipcode: user.zipcode, age: user.age, email: user.email, city: user.city, state: user.state token: my_token }
     else
-      render json: { error: 'The user could not be created'}, status: 401
+      render json: { error: 'The user could not be created' }, status: 401
     end 
   end
 
@@ -30,12 +36,14 @@ class UsersController < ApplicationController
       render json: { error: 'No user could be found', status: 401 }
     end
   end
-  
+
   #show orders
   def show_orders
     user = User.find_by(name:params[:name])
     user_orders = Order.all.select{ |order| order.user_id === user.id }
     render json: { user_orders: user_orders }
   end
+
+
 
 end
