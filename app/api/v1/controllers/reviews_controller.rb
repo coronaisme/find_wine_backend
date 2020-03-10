@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+  #validation - a user can only review a wine once 
+  validates :wine_id, uniqueness: { scope: :user_id, message: "You have already reviewed this wine!" }
+
+
   #reviews are for wine not for user
   def index 
     all_reviews = Review.all 
@@ -11,18 +15,20 @@ class ReviewsController < ApplicationController
 
   def create 
     if logged_in?
-
-      user = User.find_by(name:params[:name])
-      review = Review.new(content:params[:content], wine_id:params[:wine_id])
-      
-      if review.save 
-        render json: { id: review.id }
-      else 
-        render json: { error: 'Contact support team for further details' }, status: 401
+        user = User.find_by(name:params[:name])
+        review = Review.new(content:params[:content], wine_id:params[:wine_id])
+        
+        if review.save 
+          render json: { id: review.id }
+        else 
+          render json: { error: 'Contact support team for further details' }, status: 401
+        end
       end
+    else
+      render json : { error: 'Must be logged in to create a review' }, status: 401
     end
-    render json : { error: 'Must be logged in to create a review' }, status: 401
   end
+
 
 
 end
