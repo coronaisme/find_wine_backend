@@ -1,7 +1,8 @@
-class WinesController < ApplicationController
+class Api::V1::WinesController < ApplicationController
   #all wines
   def index 
     all_wines = Wine.all
+    render json: {wines:all_wines}
   end
   #single wine
   def show 
@@ -9,7 +10,10 @@ class WinesController < ApplicationController
     wine = Wine.find(params[:id])
     #all reviews for specific wine
     reviews = wine.reviews
+
+    render json: { wine: wine, reviews:reviews }
   end
- 
+
+  
 
 end

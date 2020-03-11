@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_230913) do
     t.string "content"
     t.integer "wine_id"
     t.integer "rating"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_230913) do
     t.string "origin"
     t.string "description"
     t.integer "score"
+    t.integer "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

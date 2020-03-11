@@ -1,7 +1,9 @@
-class ReviewsController < ApplicationController
+class Api::V1::ReviewsController < ApplicationController
   #validation - a user can only review a wine once 
-  validates :wine_id, uniqueness: { scope: :user_id, message: "You have already reviewed this wine!" }
+  validates :wine_id, uniqueness: { scope: :user_id, message: "You have already reviewed this wine" }
 
+
+  
 
   #reviews are for wine not for user
   def index 

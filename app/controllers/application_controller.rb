@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+ 
+
   def issue_token(user)
     JWT.encode({user_id: user.id}, 'secret', 'HS256')
   end
@@ -26,4 +28,5 @@ class ApplicationController < ActionController::API
   def logged_in?
     !!current_user
   end
+
 end

@@ -1,26 +1,16 @@
 Rails.application.routes.draw do
 
-  resources :api do
-    resources :v1 do
+  namespace :api do
+    namespace :v1 do
+      post '/auth', to: 'users#check' #auth user
+      post '/new', to: 'users#create' #create
+      get '/users/:id', to: 'users#show_user' #show user
+      get '/users/:id/:orders', to: 'users#show_orders' #orders by user
 
-      #../users/:id
-      #../users/:id/orders
-      #../users/:id/orders/:id
-      #(maybe?)
-      #../users/:id/friendships
-      #../users/:id/friendships/:id
-      resources :users do
-        resources :orders
-        resources :friendships #--> might not be a neccesary route
-      end
-       
-      #.../wines
-      #.../wines/:id
-      # .../wines/:id/reviews
-      #.../wines/:id/reviews/:id
-      resources :wines do 
-        resources :reviews
-      end  
+      get '/wines', to: 'wines#index' #wines
+      get '/wines/:id', to: 'wines#show' #selected wine
+
+      get '/orders', to: 'orders/index' #all orders
       
     end
   end  

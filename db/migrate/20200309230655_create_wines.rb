@@ -7,6 +7,7 @@ class CreateWines < ActiveRecord::Migration[6.0]
       t.string :origin
       t.string :description
       t.integer :score
+      t.integer :order_id
 
       t.timestamps
     end
