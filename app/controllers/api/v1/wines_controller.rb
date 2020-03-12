@@ -14,6 +14,7 @@ class Api::V1::WinesController < ApplicationController
     render json: { wine: wine, reviews:reviews }
   end
 
+
   
 
 end
