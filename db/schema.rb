@@ -59,14 +59,14 @@ ActiveRecord::Schema.define(version: 2020_03_09_230913) do
     t.string "varietal"
     t.string "description"
     t.integer "score"
-    t.integer "order_id"
     t.integer "price"
     t.string "country"
     t.string "region"
-    t.integer "volume"
-    t.integer "abv"
+    t.string "img_url"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_wines_on_user_id"
   end
 
 end

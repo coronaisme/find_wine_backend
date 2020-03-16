@@ -6,13 +6,12 @@ class CreateWines < ActiveRecord::Migration[6.0]
       t.string :varietal
       t.string :description
       t.integer :score
-      t.integer :order_id
       t.integer :price
       t.string :country
       t.string :region
-      t.integer :volume
-      t.integer :abv
-
+      t.string :img_url
+      t.belongs_to :user
+      
       t.timestamps
     end
   end
