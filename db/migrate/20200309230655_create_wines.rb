@@ -10,7 +10,7 @@ class CreateWines < ActiveRecord::Migration[6.0]
       t.string :country
       t.string :region
       t.string :img_url
-      t.belongs_to :user
+      t.belongs_to :order
       
       t.timestamps
     end

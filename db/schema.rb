@@ -63,10 +63,10 @@ ActiveRecord::Schema.define(version: 2020_03_09_230913) do
     t.string "country"
     t.string "region"
     t.string "img_url"
-    t.bigint "user_id"
+    t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_wines_on_user_id"
+    t.index ["order_id"], name: "index_wines_on_order_id"
   end
 
 end
