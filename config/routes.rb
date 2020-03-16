@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get '/wines', to: 'wines#index' #wines
       get '/wines/:id', to: 'wines#show' #selected wine
 
-      get '/orders', to: 'orders/index' #all orders
+      post '/orders/:id', to: 'orders#create' #create order
       
     end
   end  
