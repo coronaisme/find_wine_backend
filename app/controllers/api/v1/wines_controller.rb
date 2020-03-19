@@ -13,7 +13,13 @@ class Api::V1::WinesController < ApplicationController
     reviews = wine.reviews
 
     render json: { wine: wine, reviews:reviews }
-
   end
+
+
+  # bad idead
+  # def show_cabs
+  #   cabs = Wine.where(varietal:"Cabernet Sauvignon")
+  #   render json: { cabs: cabs }
+  # end
 
 end
