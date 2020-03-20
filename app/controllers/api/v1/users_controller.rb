@@ -29,7 +29,8 @@ class Api::V1::UsersController < ApplicationController
   def show_user
     if logged_in? 
       orders = Order.all.select { |order| order.user_id === current_user.id }
-      render json: { user_details: current_user, orders: orders }
+      reviews = Review.all.select { |review| review.user_id === current_user.id} 
+      render json: { user_details: current_user, orders: orders, reviews: reviews }
     else
       render json: { error: 'No user could be found', status: 401 }
     end

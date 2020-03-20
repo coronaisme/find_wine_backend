@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
 
       post '/orders/:id', to: 'orders#create' #create order
+
+      get '/reviews', to: 'reviews#index' #i want to see the reviews, for ttesting
       
     end
   end  
