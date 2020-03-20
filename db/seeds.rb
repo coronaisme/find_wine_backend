@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-u1 = User.create(name:"nick", password_digest:"password", age:28, email:"email@email.com", city:"city", state:"state", address:"address", zipcode:12345)
-u2 = User.create(name:"rick", password_digest:"password", age:28, email:"email@email.com", city:"city", state:"state", address:"address", zipcode:12345)
+u1 = User.create(name:"nick", password:"password", age:28, email:"email@email.com", avatar_url:"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcruiseweb.com%2Fblog%2Fwp-content%2Fuploads%2F2014%2F01%2Fwinelovers.jpg&f=1&nofb=1", city:"city", state:"state", address:"address", zipcode:12345)
+u2 = User.create(name:"rick", password:"password", age:28, email:"email@email.com", avatar_url:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.todayifoundout.com%2Fwp-content%2Fuploads%2F2018%2F05%2Fwine-snob-640x445.png&f=1&nofb=1", city:"city", state:"state", address:"address", zipcode:12345)
 
 o1 = Order.create(status: "Delivered", user_id:1, order_date: "date", shipped_to:"address")
 o2 = Order.create(status: "Not Delivered", user_id:2, order_date:"date", shipped_to:"none")

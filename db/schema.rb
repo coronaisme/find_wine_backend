@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_230913) do
     t.string "password_digest"
     t.string "age"
     t.string "email"
+    t.string "avatar_url"
     t.string "city"
     t.string "state"
     t.string "address"

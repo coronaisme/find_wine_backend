@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
     user = User.find_by(name:params[:name])
     if user && user.authenticate(params[:password])
       my_token = issue_token(user)
-      render json: { id: user.id, name: user.name, age: user.age, email: user.email, city: user.city, state: user.state, address: user.address, zipcode: user.zipcode, token: my_token }
+      render json: { id: user.id, name: user.name, age: user.age, email: user.email, avatar_url:user.avatar_url, city: user.city, state: user.state, address: user.address, zipcode: user.zipcode, token: my_token }
     else
       render json: { error: "The user could not be found." }, status: 401
     end
@@ -16,10 +16,10 @@ class Api::V1::UsersController < ApplicationController
 
   #create user
   def create 
-    user = User.new( name:params[:name], password:params[:password], age:params[:age], email:params[:email], city:params[:city], state:params[:state], address:params[:address], zipcode:params[:zipcode] )
+    user = User.new( name:params[:name], password:params[:password], avatar_url:user.avatar_url, age:params[:age], email:params[:email], city:params[:city], state:params[:state], address:params[:address], zipcode:params[:zipcode] )
     if user.save
       my_token = issue_token(user)
-      render json: { id: user.id, name: user.name, zipcode: user.zipcode, age: user.age, email: user.email, city: user.city, state: user.state, token: my_token }
+      render json: { id: user.id, name: user.name, zipcode: user.zipcode, avatar_url:user.avatar_url, age: user.age, email: user.email, city: user.city, state: user.state, token: my_token }
     else
       render json: { error: 'The user could not be created' }, status: 401
     end 
