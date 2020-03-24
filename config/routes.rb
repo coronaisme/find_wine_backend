@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post '/auth', to: 'users#check' #auth user
-      post '/new', to: 'users#create' #create
+      post '/users/new', to: 'users#create' #create
       get '/users/:id', to: 'users#show_user' #show user
       get '/users/:id/:orders', to: 'users#show_orders' #orders by user
 
@@ -15,7 +15,8 @@ Rails.application.routes.draw do
 
       post '/orders/:id', to: 'orders#create' #create order
 
-      get '/reviews', to: 'reviews#index' #i want to see the reviews, for ttesting
+      get '/reviews', to: 'reviews#index' #all reviews
+      post '/reviews/new', to: 'reviews#create' #create a review
       
     end
   end  
