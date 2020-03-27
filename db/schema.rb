@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_230913) do
     t.integer "user_id"
     t.date "order_date"
     t.string "shipped_to"
+    t.integer "total", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_230913) do
     t.string "region"
     t.string "img_url"
     t.bigint "order_id"
+    t.integer "quantity", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_wines_on_order_id"

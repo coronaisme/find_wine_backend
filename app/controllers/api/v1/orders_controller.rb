@@ -13,28 +13,20 @@ class Api::V1::OrdersController < ApplicationController
 
 
   def create
-    if logged_in?
-      user = User.find(params[:id])
-      order = Order.new(user_id:params[:user_id], status:params[:status], order_date:params[:order_date], shipped_to:params[:shipped_to])
+    # if logged_in?
+    # byebug
+      user = User.find_by(id:params[:id])
+      order = Order.new(user_id:params[:user_id], status:params[:status], shipped_to:params[:shipped_to], total:params[:total])
 
         if order.save
-          render json { id: order.id }
+          render json: { order:order, id: order.id }
         else
           render json: { error: 'Could not find order'}, status: 401
         end
-    else
-      render json: { error: 'Noone is logged in' }, status: 401
+    # else
+    #   render json: { error: 'Noone is logged in' }, status: 401
+    # end
   end
-
-  # def index
-  #   all_orders = Order.all 
-  #   render json: { all_orders:all_orders }
-  # end
-
-  # def show
-  #   order = Order.find(params[:id])
-  #   render json: { order:order }
-  # end
 
 
 

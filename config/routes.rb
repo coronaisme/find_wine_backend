@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       # get '/wines/cabernetsauvignon', to: 'wines#show_cabs' #show cabs bad idea
 
 
-      post '/orders/:id', to: 'orders#create' #create order
+      post 'new_order', to: 'orders#create' #create order
 
       get '/reviews', to: 'reviews#index' #all reviews
       post '/reviews/new', to: 'reviews#create' #create a review
