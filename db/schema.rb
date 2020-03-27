@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_230913) do
     t.string "country"
     t.string "region"
     t.string "img_url"
+    t.string "second_img_url"
     t.bigint "order_id"
     t.integer "quantity", default: 1
     t.datetime "created_at", precision: 6, null: false

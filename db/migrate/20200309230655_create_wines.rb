@@ -10,6 +10,7 @@ class CreateWines < ActiveRecord::Migration[6.0]
       t.string :country
       t.string :region
       t.string :img_url
+      t.string :second_img_url
       t.belongs_to :order
       t.integer :quantity, default: 1
 
