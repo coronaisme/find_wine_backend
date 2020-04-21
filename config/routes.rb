@@ -9,9 +9,6 @@ Rails.application.routes.draw do
 
       get '/wines', to: 'wines#index' #wines
       get '/wines/:id', to: 'wines#show' #selected wine
-      
-      # get '/wines/cabernetsauvignon', to: 'wines#show_cabs' #show cabs bad idea
-
 
       post 'new_order', to: 'orders#create' #create order
 
