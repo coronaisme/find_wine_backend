@@ -17,9 +17,14 @@ class Api::V1::OrdersController < ApplicationController
     # byebug
       user = User.find_by(id:params[:id])
       order = Order.new(user_id:params[:user_id], status:params[:status], shipped_to:params[:shipped_to], total:params[:total])
+  
+      params[:wine_ids].map  do |wine_id| 
+       order.wines << Wine.find(wine_id)
+      end
 
-        if order.save
-          render json: { order:order, id: order.id }
+      if order.save!
+        
+          render json: order 
         else
           render json: { error: 'Could not find order'}, status: 401
         end
