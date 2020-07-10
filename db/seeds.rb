@@ -71,10 +71,25 @@ Wine.create!(title: "Castello di Bossi Riserva Berardo", year: 2015, varietal: "
 Wine.create!(title: "Bodegas Vega Sicilia Unico Tinto", year: 2006, varietal: "Tempranillo", second_img_url:"https://www.wine.com/product/images/w_1440,h_4379,c_fit,q_auto:good,fl_progressive/lyfq7xax03irs92ngchw.jpg
 ", description: "Silky and dense, this red delivers focused flavors of currant, licorice, tobacco and mineral, supported by well-integrated tannins and fresh acidity. Not showy, but has depth. Lithe and energetic. Drink now through 2021. 7,800 cases made.", score: 94, price: 450, country: "Spain", region: "Ribera del Duero", img_url:"https://www.wine.com/product/images/w_1024,h_1252,c_fit,q_auto:good,fl_progressive/hfqe7bahrj8wsuuyaiuk.jpg")
 
+Wine.create!(title:"Domaine de la Romanee-Conti La Tache Grand Cru", year: 2005, varietal: "Pinot Noir", 
+   second_img_url:"https://images.jjbuckley.com/Vintage/249656/thumb_463x1162_2009-2439-750.jpg",
+   description: "Celebrated as some of the best wine in the universe, red wine from Burgundy, otherwise known as red Burgundy, is Pinot noir. In fact Burgundy is the birthplace of Pinot noir and the source of the planet’s most sensual, delicate, valuable and sought-after Pinot noir wines.",
+   score: 96,
+   price: 5900,
+   country: "France",
+   region: "Burgundy",
+   img_url:  "https://www.wine.com/product/images/w_480,c_fit,q_auto:good,fl_progressive/94249.jpg")
+   
+Wine.create!(title:"Antinori Tignanello", year: 2016, varietal: "Tuscan Blends", 
+    second_img_url:"https://www.wine.com/product/images/w_768,h_2194,c_fit,q_auto:good,fl_progressive/asfr1cbi43xlwxr8ccaz.jpg",
+    description: "This fragrant, savory red carries aromas of underbrush, plum, blue flower, cocoa and camphor on the nose. The polished palate boasts juicy Marasca cherry, ripe blackberry, licorice, tobacco and an appealing hint of game. Silky tannins and bright acidity keep it balanced and elegant. Drink 2021–2036.",
+    score: 95,
+    price: 135,
+    country: "Italy",
+    region: "Tuscany",
+    img_url: "https://www.wine.com/product/images/w_768,c_fit,q_auto:good,fl_progressive/a1vpdawxtclgskvbd258.jpg")
 
-
-
-
+    
 
 
 
@@ -107,5 +122,5 @@ Review.create!(content:"Beautifully crafted, young and energetic, with a vibrant
 Review.create!(content:"It displays, as Lafite always does, more of a laid back elegance than Latour, and the difference between the two once again highlights the huge differences in terroir between north and south Pauillac, with the deep gravels here giving finesse, composure, almost nonchalance. It tames with a whisper, bringing you to submission by gently, purposefully and ever so slowly layering one thing on top of another. It has gorgeously pure and precise fruit on the nose, while the palate displays a multitude of flavours, from charcoal to cassis to crushed stone, and yet no one thing dominates. There are a ton of tannins, but they are individually fine, and it's only in retrospect that you realise how many of them there are. The tone of Lafite is speaking over the vintage, and it's going to run and run.", wine_id:3, user_id:1)
 
 
-o1 = Order.create!(user:u1, status:"complete", shipped_to:"123 poop", total:5)
-o1.wines << w1
+
+
